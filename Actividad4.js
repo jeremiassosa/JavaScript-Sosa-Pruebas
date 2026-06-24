@@ -49,10 +49,11 @@ if (jugador === null) {
   console.log("Jugador no encontrado");
 }
 
-//Fragmento 3.  //para terminar
+//Fragmento 3.   
 // El usuario ingresó su edad en un input HTML (siempre llega como string)
 const edadTexto = "17";
 const edadMinima = 16;
+const edad = number(edadTexto);
 if (edadTexto === edadMinima) {
   console.log("Edad válida");
 } else {
