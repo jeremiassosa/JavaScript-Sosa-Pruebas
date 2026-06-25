@@ -1,12 +1,11 @@
-//Parte B — renombrar
+//Parte C — valor por defecto
 
 const jugador = {
   nombre: "Haaland",
   pais: "Noruega",
   goles: 12,
 };
-const {nombre, goles} = jugador;
-const nombreJugador = nombre;
+const { camiseta = 9 } = jugador;
 
-console.log(nombre);
+console.log(camiseta);
 
