@@ -14,3 +14,8 @@ console.log(copia.goles);
 // array, por que usan el mismo y si se llega a modoficar en alguno se modifican en los 2
 
 
+//Parte B — comprobá la igualdad
+
+console.log(original === copia);
+
+//En este caso da "false" ya que esta misma no compara el contenido de los arrays
