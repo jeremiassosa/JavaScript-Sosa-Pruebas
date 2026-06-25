@@ -2,13 +2,13 @@
 
 //Parte A — reproducí el bug
 
-const original = { nombre: "Mbappé", goles: 5 };
-const copia = original;
+// const original = { nombre: "Mbappé", goles: 5 };
+// const copia = original;
 
-copia.goles = 99;
+// copia.goles = 99;
 
-console.log(original.goles);
-console.log(copia.goles);
+// console.log(original.goles);
+// console.log(copia.goles);
 
 // En ambos casos dio 99 goles ya que el "copia.goles = 99" esta modificando directamente al 
 // array, por que usan el mismo y si se llega a modoficar en alguno se modifican en los 2
@@ -16,6 +16,25 @@ console.log(copia.goles);
 
 //Parte B — comprobá la igualdad
 
-console.log(original === copia);
+// console.log(original === copia);
 
 //En este caso da "false" ya que esta misma no compara el contenido de los arrays
+
+
+
+//Parte C — arreglalo con spread
+
+const original = { nombre: "Mbappé", goles: 5 };
+const copia = { ...original };
+
+copia.goles = 99;
+console.log(original.goles);
+console.log(original === copia);
+
+//   "console.log(original.goles);"
+// Esta vez no modifica los goles del original ya que ahora al hacerle un spread a la
+// copia el contenido del original al de la "copia" antes esto era solo un mismo contenido 
+// en un mismo lugar.
+
+//.   "console.log(original === copia);"
+// Sigue dando "false" ya que los === no se fijan en el contenido.
