@@ -20,3 +20,10 @@ console.log(goleadores);
 // 4 jugadores los cuales metieron mas de 2 goles cada uno, y los demas como [Benzema, Kayne, Neymar, Muller]
 // los cuales convirtieron menos de 2 tantos.
 
+//Parte B — map
+
+const nombres = jugadores.map(j => j.nombre)
+console.log(nombres);
+
+// Dice los nombres de todos los jugadores
+
