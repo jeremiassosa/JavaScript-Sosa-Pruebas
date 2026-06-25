@@ -5,7 +5,9 @@ const jugador = {
   pais: "Noruega",
   goles: 12,
 };
-const { camiseta = 9 } = jugador;
+const podio = ["Argentina", "Francia", "Croacia"];
 
-console.log(camiseta);
+const [oro, plata, bronce] = podio;
+console.log(oro); 
+console.log(plata);
 
