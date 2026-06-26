@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() { //añado un evento el cual ejecuta una funcion 
+            const titulo = document.querySelector("h1");           //al cargar por completo la pagina y extraigo <h1>
+            titulo.textContent = "JavaScript puede cambiar todo";
+
+            const text = document.createElement("p");
+            text.textContent = "lol";
+            text.classList.add("color-text");                        //añado la clase color en el texto
+            text.style.color = "tomato";
+
+            document.body.appendChild(text);                        //Muestro el texto en el html       
+        });
+    </script>
+</head>
+<body>
+  <h1 id="primero">Hola, mundo</h1>
+</body>
