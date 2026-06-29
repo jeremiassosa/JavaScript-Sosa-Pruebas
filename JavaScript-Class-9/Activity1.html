@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="suma">+</button>
+        <span id="text"></span>
+        <button id="resta">-</button>
+    </div>
+    <script>
+
+        const botonSuma = document.getElementById("suma");
+        const botonresta = document.getElementById("resta");
+        const marcador = document.getElementById("text");
+        let goles = 0;
+        marcador.textContent = goles;
+
+        botonSuma.addEventListener("click", () => {
+            goles++;
+            marcador.textContent = goles;
+        });
+        botonresta.addEventListener("click", () => {
+            goles--;
+            marcador.textContent = goles;
+        });
+
+
+    </script>
+</body>
+
+</html>
