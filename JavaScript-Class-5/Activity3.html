@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 5 - Act. 3 — Parámetros y valores por defecto</title>
+</head>
+
+<body> 
+    <script>
+    
+    //---------------------------------
+    // Parte A — Predecí los faltantes
+    //---------------------------------
+        
+    function presentar(nombre, ciudad) {
+        return `${nombre} es de ${ciudad}`;
+    }
+    
+    presentar("Ana", "Rosario");   // Apareceria "Ana es de Rosario"
+    presentar("Ana");              // Apareceria "Ana es de Undefined"
+    presentar();                   // Apareciria "Undefined es de Undefined" 
+    
+
+    //-----------------------------------------
+    // Parte B — Saludo con idioma por defecto
+    //-----------------------------------------
+    
+    function saludar (nombre, idioma = es){
+        return `${idioma}, ${nombre}`;
+    }
+    const es = "Hola";
+    const en = "Hello";
+    
+    
+    saludar("Ana");          // "Hola, Ana"
+    saludar("Ann", en);    // "Hello, Ann"
+    saludar("Ana", es);    // "Hola, Ana"
+    
+    
+    //-----------------------------------------
+    // Parte C — Precio con descuento opcional
+    //-----------------------------------------
+
+    function precioFinal (precio, descuento = 0){
+        return((precio * (100 - descuento)) / 100);
+    }
+
+    precioFinal(1000);       // 1000
+    precioFinal(1000, 10);   // 900
+    precioFinal(1000, 25);   // 750
+
+    </script>
+</body>
+
+</html>
