@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class5 - Práctica 2 — return vs console.log</title>
+</head>
+
+<body>
+    <script>
+        //--------------------
+        // Parte A — Predecí
+        //--------------------
+        function triple(n) {
+            console.log(n * 3);
+        }
+
+        const a = triple(4);
+        console.log(a);
+        console.log(triple(4) + 1);
+        //Deberia dar 12 y 13 los ultimos 2 console.log 
+
+        //Después corrélo y compará. ¿Por qué la última línea hace lo que hace?
+
+        // "console.log(triple(4) + 1);" da "NaN"
+    </script>
+</body>
+
+</html>

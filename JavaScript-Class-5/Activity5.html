@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Class 5 - Act. 5 — Scope y funciones anidadas</title>
+</head>
+
+<body>
+    <script>
+
+        //------------------------------
+        // Parte A — ¿Qué se ve afuera?
+        //------------------------------
+
+        function calcular() {
+            const resultado = 10 * 2;
+            return resultado;
+        }
+
+        console.log(calcular());     // 20
+        console.log(resultado);      // undefined
+
+        //La segunda linea no funciona ya que la variable const resultado 
+        //esta dentro de la function
+
+        //------------------------------------------
+        // Parte B — Acumulador con función anidada
+        //------------------------------------------
+
+
+        function puntajefinal() {
+            let puntos = 0
+            function sumar(n) {
+                puntos = puntos + n;
+            }
+
+            sumar(5), sumar(3), sumar(2);
+            return puntos;
+        }
+
+        console.log(puntajefinal())
+
+        //------------------------------
+        // Parte C — ¿Quién ve a quién?
+        //------------------------------
+
+        function exterior() {
+            const a = 1;
+            function interior() {
+                const b = 2;
+                return a + b;
+            }
+            return interior();
+        }
+
+        exterior();
+
+        //¿exterior() qué devuelve? 
+        //  rta:Devuelve 3 en este caso 
+        
+        // ¿interior puede ver a? 
+        //  rta:Si ya que viene secuencialmente
+
+        // ¿exterior puede ver b?
+        //  rta:si ya que esta dentro de su propia funcion
+
+
+    </script>
+</body>
+
+</html>
