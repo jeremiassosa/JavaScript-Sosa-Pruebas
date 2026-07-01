@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 02 — Validar un nombre</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 420px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 8px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            margin-top: 8px;
+            min-height: 1.2em;
+        }
+
+        #resultado {
+            margin-top: 16px;
+            font-size: 1.1rem;
+            color: #1a7a1a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Práctica 02</h1>
+    <p>Ingresá tu nombre. Se validará antes de aceptarlo.</p>
+
+    <form id="miForm">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Ej: María">
+        <p id="error"></p>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        const form = document.querySelector("#miForm");
+        const caja = document.getElementById("nombre");
+        const resultado = document.getElementById("resultado");
+        const error = document.getElementById("error");
+
+        function tieneNumero(texto) {
+            for (const caracter of texto) {
+                if (caracter >= "0" && caracter <= "9")
+                    return true;
+            }
+            return false;
+        }
+
+        function esVacio(texto) {
+            return texto.trim().length === 0;
+        }
+
+
+        function alMenos3Caracteres(texto) {
+            return texto.length >= 3;
+        }
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let nombre = caja.value
+
+            // (! esVacio) AND  (Al menos 3 caracteres) AND (! tiene que tener numero)
+
+            if (!esVacio(nombre) && alMenos3Caracteres(nombre) && !tieneNumero(nombre)) {
+                error.textContent = ``;
+                resultado.textContent = `Bienvenido ${nombre.value}`;
+            } else {
+                error.textContent = `Error`
+                resultado.textContent = ``;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
