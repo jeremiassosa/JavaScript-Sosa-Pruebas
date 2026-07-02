@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class - 11 - Act. 1 — De objeto a texto y vuelta</title>
+</head>
+
+<body>
+    <script>
+
+        const jugador = { nombre: "Messi", goles: 8 };
+
+        const texto = JSON.stringify(jugador);
+
+        console.log(texto);
+        // me lo muestra de esta forma ya que la lista esta transformada en un dato JSON
+        // y este mismo lo lee como un string mas lo almacena y lee se muestra igual que 
+        // la variable const jugador { nombre: "Messi", goles: 8 }
+        console.log(typeof texto);
+        
+        console.log(texto.nombre);
+        // al ejecutar el texto.nombre, aparece en consola undefined
+
+        
+        const objeto = JSON.parse(texto);
+        console.log(objeto.nombre);
+        console.log(typeof objeto);
+        //ahora si los lee como messi y como objeto tal como en javaScript
+    </script>
+
+</body>
+
+</html>
